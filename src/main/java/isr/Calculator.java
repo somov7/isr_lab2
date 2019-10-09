@@ -13,13 +13,15 @@ public class Calculator {
         "-", new Operator(0, (l, r) -> l.subtract(r)),
         "*", new Operator(1, (l, r) -> l.multiply(r)),
         "/", new Operator(1, (l, r) -> l.divide(r)),
-        "%", new Operator(1, (l, r) -> l.remainder(r))
+        "%", new Operator(1, (l, r) -> l.remainder(r)),
+        "//", new Operator(1, (l, r) -> l.divideToIntegralValue(r))
     );
 
     private static final int MAX_PRECEDENCE = 1;
 
     /**
      * Parse and calculate the expression
+     * 
      * @param expression string expression
      * @return BigDecimal representing the result
      * @throws RuntimeException if operator not found or if algorithm error occured
@@ -95,6 +97,7 @@ public class Calculator {
 
     /**
      * Return operators available for use inside expressions
+     * 
      * @return Set of strings
      */
     public static Set<String> getAvalableOperators() {
