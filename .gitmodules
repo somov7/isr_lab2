@@ -1,0 +1,3 @@
+[submodule "isr_lab2-submodule"]
+	path = isr_lab2-submodule
+	url = git@github.com:JustEvgeniy/isr_lab2-submodule.git
