@@ -14,10 +14,11 @@ public class Calculator {
         "*", new Operator(1, (l, r) -> l.multiply(r)),
         "/", new Operator(1, (l, r) -> l.divide(r)),
         "%", new Operator(1, (l, r) -> l.remainder(r)),
-        "//", new Operator(1, (l, r) -> l.divideToIntegralValue(r))
+        "//", new Operator(1, (l, r) -> l.divideToIntegralValue(r)),
+        "**", new Operator(2, (l, r) -> l.pow(r.intValueExact()))
     );
 
-    private static final int MAX_PRECEDENCE = 1;
+    private static final int MAX_PRECEDENCE = 2;
 
     /**
      * Parse and calculate the expression
