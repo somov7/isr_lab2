@@ -47,6 +47,11 @@ public class CalculatorTest {
     }
 
     @Test
+    void testPow() {
+        assertEquals(new BigDecimal(2).pow(12345), Calculator.process("2**12345"));
+    }
+
+    @Test
     void testMixed() {
         assertEquals(new BigDecimal(3), Calculator.process("1+2*3-4*5/5"));
     }
