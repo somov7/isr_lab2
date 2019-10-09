@@ -37,8 +37,13 @@ public class CalculatorTest {
         assertEquals(new BigDecimal(0), Calculator.process("0/1"));
         assertEquals(new BigDecimal(1), Calculator.process("5/5"));
         assertEquals(new BigDecimal(4 / 2), Calculator.process("4/2"));
-        assertEquals(new BigDecimal("12345678900000").multiply(new BigDecimal("12345678900000987654321")),
-                Calculator.process("12345678900000 * 12345678900000987654321"));
+        assertEquals(new BigDecimal("12345678900000").divide(new BigDecimal("10000000000000")),
+                Calculator.process("12345678900000 / 10000000000000"));
+    }
+
+    @Test
+    void testIntegerDivision() {
+        assertEquals(new BigDecimal(5 / 2), Calculator.process("5//2"));
     }
 
     @Test
