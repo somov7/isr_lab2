@@ -55,4 +55,9 @@ public class CalculatorTest {
     void testMixed() {
         assertEquals(new BigDecimal(3), Calculator.process("1+2*3-4*5/5"));
     }
+
+    @Test
+    void testFloatingPointInput(){
+        assertEquals(new BigDecimal("13.525678"), Calculator.process("1.234*4.567+7.890"));
+    }
 }

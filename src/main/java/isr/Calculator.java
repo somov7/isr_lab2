@@ -1,6 +1,7 @@
 package isr;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Map;
@@ -35,10 +36,10 @@ public class Calculator {
         LinkedList<Operator> operators = new LinkedList<>();
         LinkedList<BigDecimal> operands = new LinkedList<>();
 
-        String[] operatorsStr = expression.split("\\d+");
-        String[] operandsStr = expression.split("\\D+");
-        // System.out.println("operatorsStr = " + Arrays.toString(operatorsStr));
-        // System.out.println("operandsStr = " + Arrays.toString(operandsStr));
+        String[] operatorsStr = expression.split("[\\d\\.]+");
+        String[] operandsStr = expression.split("[^\\d\\.]+");
+        System.out.println("operatorsStr = " + Arrays.toString(operatorsStr));
+        System.out.println("operandsStr = " + Arrays.toString(operandsStr));
 
         for (String operatorStr : operatorsStr) {
             if (operatorStr.isBlank()) {
