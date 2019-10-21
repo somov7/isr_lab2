@@ -47,6 +47,11 @@ public class CalculatorTest {
     }
 
     @Test
+    void testIntegerDivisionNegative() {
+        assertEquals(new BigDecimal(-5 / 2), Calculator.process("-5//2"));
+    }
+
+    @Test
     void testPow() {
         assertEquals(new BigDecimal(2).pow(12345), Calculator.process("2**12345"));
     }
